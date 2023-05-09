@@ -1,0 +1,30 @@
+﻿@page
+@using FIlms.Models;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    //ViewData["Films"] = new List<Film>();
+}
+
+<div class="text-center">
+    <table class="table table-hover">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Producer</th>
+            <th>Style</th>
+            <th>Description</th>  
+        </thead>
+        @foreach (Film film in ViewData["Films"] as List<Film>)
+        {
+            <tr>
+                <td>@film.Id</td>
+                <td>@film.Name</td>
+                <td>@film.Producer</td>
+                <td>@film.Style</td>
+                <td>@film.Description</td>
+            </tr>
+        }
+    </table>
+    
+</div>
